@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Search</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    </head>
+    <body class="container">
+
+        <br>
+    <div class="card">
+        <h5 class="card-header">
+            Search
+           <a class="btn btn-primary float-right mr-1 " href="/adduser">Add Users</a>
+       </h5>
+
+       <div class="card-body">
+        <h5 class="card-title"></h5>
+        <table class="table">
+            <tr>
+                <form action="/search" method="post">
+
+                    <td colspan='2'>
+                        <input type="text" class="form-control" name="fname" placeHolder="Search by first name">	    
+                    </td>
+                    <td>
+                        <button id="submit-button" type="submit" class="btn btn-primary">Submit</button>  
+                    </td>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                        </tr>
+                    {{range .}}
+                        <tr>
+                            <td>{{.FirstName}}</td>
+                            <td>{{.LastName}}</td>
+                            <td>{{.Email}}</td>
+                        </tr>
+                    {{end}}
+                    </form>
+              
+        </table>
+        </div>
+    </div>
+    </body>
+</html>
